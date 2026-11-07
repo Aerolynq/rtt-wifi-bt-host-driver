@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------------------
+# wifi-bt-host-driver - release repository ignore rules
+#
+# The Bluetooth protocol stack library and the other Infineon components under
+# External/ are distributed separately by Infineon under the Infineon End User
+# License Agreement. They are NOT part of this package and must never be
+# committed here: the user downloads them from Infineon into External/ to
+# build the Bluetooth part. See NOTICE, Section 6.
+# ---------------------------------------------------------------------------
+External/*
+!External/README.md
+
+# The pull-request description is a submission aid for the RT-Thread package
+# index review. It is not part of the distributed package.
+PR_DESCRIPTION.md
+
+# Editor and OS leftovers.
+*~
+*.bak
+*.orig
+*.rej
+.DS_Store
+Thumbs.db
+
+# Python bytecode cache produced by tools/hcd2c.py at build time.
+__pycache__/
+*.py[cod]
+
+# The Bluetooth controller firmware C file and its object file are generated
+# from the .hcd patch data by tools/hcd2c.py at build time. They are not part
+# of the distribution. See NOTICE, Section 4.3.
+drivers/btstack-integration/bt-fw/*/btfw.c
+drivers/btstack-integration/bt-fw/*/btfw.o

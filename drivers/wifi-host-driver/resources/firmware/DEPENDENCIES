@@ -1,0 +1,30 @@
+This DEPENDENCIES file is part of the Permissive Binary License
+(https://github.com/Infineon/Permissive-Binary-License-1.0) under which
+the WiFi firmware and CLM blob binaries in this directory are
+distributed.
+
+The binary blobs in the COMPONENT_CYWL* sub-directories are produced
+from the following Infineon / Cypress source artifacts:
+
+  - WiFi firmware (FW):        IFW (Internal Firmware) build artifact
+                               extracted from Infineon's closed-source
+                               firmware build tree
+                               (no GPL/OSS build dependency)
+
+  - CLM blob (Country Locale Matrix):
+                               Pre-built CLM blob from Infineon
+                               (no GPL/OSS build dependency)
+
+  - NVRAM (per module):        Per-chip tuning parameters supplied by
+                               Infineon (no GPL/OSS build dependency)
+
+No third-party open-source code (GPL, LGPL, MIT, BSD, Apache, etc.)
+is used, linked, or embedded in the binary blobs shipped in this
+directory.  The C wrappers (wifi_*_firmware.c) embed the same binary
+data as C arrays, so the arrays stay under the Permissive Binary
+License.  Only the short Aerolynq header in front of the array is
+Aerolynq-authored.  See NOTICE Section 4.2 at the root of this
+package.
+
+If you regenerate these blobs using Infineon's wl_tool or the
+ModusToolbox build system, please update this file accordingly.

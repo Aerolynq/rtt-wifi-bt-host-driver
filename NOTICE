@@ -1,0 +1,380 @@
+wifi-bt-host-driver - NOTICE
+===========================
+
+Copyright (c) 2024-2026 Xinlian Xinwei (Hangzhou) Technology Co., Ltd.
+(新联鑫威（杭州）科技有限公司, "Aerolynq")
+Website: https://www.aerolynq.com    Contact: xlx@xlxwlan.com
+
+wifi-bt-host-driver (the "Package") is the RT-Thread driver package for
+Aerolynq CYWL-series WiFi/Bluetooth modules, which Aerolynq builds on
+Infineon WiFi and Bluetooth chips. It is built on Infineon's WiFi
+Host Driver (WHD), the BTStack host-side integration and the RTOS
+abstraction layer.
+
+This NOTICE says which license applies to which files, and gives the
+attribution those licenses require. The license named in a file's own header
+(an SPDX-License-Identifier tag or a license text) applies to that file. The
+only exception is Section 4, where this NOTICE governs.
+
+In short:
+
+  - Aerolynq's own files (RT-Thread porting layer, module support, build
+    files, documentation) are under the Aerolynq Software License in the
+    file LICENSE: use is limited to Aerolynq modules; non-commercial use is
+    free; commercial use needs written authorization from Aerolynq
+    (xlx@xlxwlan.com). Aerolynq files whose header says Apache-2.0 may be
+    used under Apache-2.0 (Section 3.2).
+  - Infineon / Cypress open-source code is under the Apache License,
+    Version 2.0 (Section 2). Its use is not limited to Aerolynq modules.
+  - Infineon WiFi firmware, CLM blobs and NVRAM data are under the
+    Permissive Binary License 1.0 (Section 4.1).
+  - The Bluetooth controller firmware patch data (Infineon CYW43438 for
+    CYWL6208, from https://github.com/Infineon/bt-fw-azw-cyw43438) is
+    shipped as binary .hcd only, under the
+    Infineon End User License Agreement (Section 4.3). The C file the stack
+    links against is generated locally at build time and is not part of the
+    distributed Package.
+(中文摘要：Aerolynq 自有文件适用 LICENSE（仅限配合基于 Infineon 芯片的 Aerolynq 模组使用；非商业免费；
+商业使用须书面授权），其中文件头标注 Apache-2.0 的可按 Apache-2.0 使用。Infineon /
+Cypress 的开源代码适用 Apache-2.0，不受 Aerolynq 模组限制。固件、CLM 和 NVRAM 数据适用
+Permissive Binary License 1.0。蓝牙控制器固件补丁数据（CYWL6208 所用 Infineon CYW43438 固件，
+来源 https://github.com/Infineon/bt-fw-azw-cyw43438）
+仅以二进制 .hcd 形式随包分发，适用英飞凌最终用户许可协议（第 4.3 节）；协议栈链接用的 C 文件在构建时本地生成，
+不属于分发内容。)
+
+
+1. License texts delivered with this Package
+--------------------------------------------
+    LICENSE                    Aerolynq Software License
+    drivers/btstack-integration/COMPONENT_HCI-UART/LICENSE-Apache-2.0.txt
+    drivers/wifi-host-driver/LICENSE-Apache-2.0.txt
+    Porting/abstraction-rtos/LICENSE-Apache-2.0.txt
+                               Apache License, Version 2.0 (standard text,
+                               one identical copy in each upstream component
+                               directory)
+    drivers/wifi-host-driver/resources/firmware/
+        LICENSE-permissive-binary-license-1.0.txt
+                               Permissive Binary License 1.0
+        DEPENDENCIES           PBL condition 3 file for the firmware blobs
+    drivers/btstack-integration/bt-fw/
+        LICENSE.txt
+                               Infineon End User License Agreement (issued
+                               originally by Cypress Semiconductor, now an
+                               Infineon company), which governs the Bluetooth
+                               controller firmware patch data and the .c file
+                               generated from it (Section 4.3)
+        tools/hcd2c.py         Aerolynq's generator: converts the .hcd patch
+                               data to the C file at build time (Section 4.3)
+    External/README.md         Lists the components that are not delivered with
+                               this Package and where to obtain them
+                               (Section 6)
+
+Files that are NOT part of the distributed Package, and are therefore
+excluded from releases and from version control:
+
+    drivers/btstack-integration/bt-fw/bt-fw-cywl-*/btfw.c
+                               Generated at build time from the .hcd
+                               (Section 4.3)
+
+2. Infineon / Cypress open-source code (Apache License 2.0)
+-----------------------------------------------------------
+Taken from the Infineon / Cypress projects below and used under the Apache
+License, Version 2.0 (the LICENSE-Apache-2.0.txt in each component
+directory listed in Section 1). The original copyright,
+patent, trademark and attribution notices are kept in the files. None of
+these upstream projects ships a NOTICE file, so there is no upstream
+attribution text to carry over.
+
+2.1 Upstream projects
+
+  WiFi Host Driver (WHD)
+      Upstream: https://github.com/Infineon/wifi-host-driver
+      Version:  WHD 5.3.1.29649 ("11ax v5.3.1")
+      Here:     drivers/wifi-host-driver/src/, inc/, and
+                resources/resource_imp/wiced_resource.h
+
+  BTStack integration
+      Upstream: https://github.com/Infineon/btstack-integration
+      Version:  release 6.2.1
+      Here:     drivers/btstack-integration/COMPONENT_HCI-UART/
+
+  RTOS abstraction layer
+      Upstream: https://github.com/Infineon/abstraction-rtos
+      Version:  release 1.8.0 (see the note below)
+      Here:     Porting/abstraction-rtos/include/cyabs_rtos*.h,
+                include/cy_worker_thread.h, source/cy_worker_thread.c
+
+  Cypress HAL public headers
+      Upstream: Cypress / Infineon HAL headers (release not recorded)
+      Here:     Porting/rt-thread/include/hal/ and cyhal_gpio.h,
+                cyhal_hw_types.h, cyhal_modules.h, cyhal_sdio.h
+
+  Other Cypress HAL / BSP headers (release not recorded)
+      Here:     Porting/rt-thread/include/cyhal_drivers.h, cyhal_syspm.h,
+                bsp/cybsp_types.h
+
+  Network buffer layer (reference file)
+      Upstream: Infineon whd-bsp-integration cy_network_buffer_lwip.c
+      Here:     Porting/rt-thread/common/cy_network_buffer.c
+
+Note on abstraction-rtos: the only kernel ports in Porting/abstraction-rtos/
+are COMPONENT_RTTHREAD (include/ and source/), which are Aerolynq's own
+implementation (Section 3.1). The COMPONENT_ZEPHYR directories exist but are
+empty. There are no COMPONENT_FREERTOS, COMPONENT_RTX or COMPONENT_THREADX
+directories in this Package. The shared headers cyabs_rtos.h and
+cyabs_rtos_internal.h differ from the abstraction-rtos 1.8.0 snapshot
+Aerolynq has, so they come from another abstraction-rtos release that was
+not recorded (the local copy is 1426 lines; this Package has 1679). Whether
+Aerolynq changed them is not recorded either.
+
+2.2 Why Apache-2.0 applies to these files
+
+The files carry an "SPDX-License-Identifier: Apache-2.0" tag and the Apache
+License, Version 2.0 notice in their headers. We apply the license stated in
+each file header. Some upstream repositories (btstack-integration and
+wifi-host-driver) ship an Infineon End User License Agreement (EULA) as the
+root LICENSE.txt. Section 3 of that EULA ("Free and Open Source Software")
+says that portions of the Software licensed under free or open source
+licenses are subject to the applicable license agreement and not to the
+EULA. Infineon stated in https://github.com/Infineon/abstraction-rtos/issues/1
+that the file headers define the license of each file. We found no
+statement for the other two repositories and apply the same reading. The
+EULA is not part of this Package and is not applied to these files.
+
+2.3 Upstream files changed by Aerolynq (Apache License 2.0, Section 4(b))
+
+Aerolynq changed these upstream files. Each one carries a notice of the
+change in its header, with the line "Modified by Aerolynq". The unchanged
+parts keep Apache-2.0.
+
+  drivers/wifi-host-driver/src/whd_hal_port.c
+  drivers/wifi-host-driver/src/include/whd_hal_port.h
+      Not-connected pin check accepts the RT-Thread pin value.
+  drivers/wifi-host-driver/src/whd_chip_constants.c
+      Added support for one further Infineon Wi-Fi chip variant: its
+      memory map and RAM size. The identifier is not given here; it is
+      defined in the file.
+  drivers/wifi-host-driver/inc/whd_wifi_api.h
+      Added roam trigger, roam delta and roam scan period APIs.
+  drivers/wifi-host-driver/src/include/whd_wlioctl.h
+      Added structure packing pragmas.
+  drivers/wifi-host-driver/src/include_helium/whd_wlioctl.h
+      Added structure packing pragmas around the offload configuration
+      structure. This header is not built by the current configuration.
+  drivers/btstack-integration/COMPONENT_HCI-UART/common/cybt_hci_rx_task.c
+      Added a weak diagnostic hook and a non-blocking drain of unknown HCI
+      packets.
+  drivers/btstack-integration/COMPONENT_HCI-UART/common/cybt_platform_main.c
+  drivers/btstack-integration/COMPONENT_HCI-UART/platform_hal_wrappers/
+      platform_hal_wrapper.h
+      Function prototypes changed from "()" to "(void)".
+  Porting/abstraction-rtos/source/cy_worker_thread.c
+      Added critical section mapping for RT-Thread and MTB HAL.
+  Porting/rt-thread/include/cyhal_gpio.h, cyhal_sdio.h, cyhal_hw_types.h,
+  cyhal_modules.h
+      Added type aliases and RT-Thread types for the CYHAL port.
+
+Derived file. This is an Aerolynq adaptation of an Infineon file. Its
+header says so, and keeps the Infineon copyright and the Apache-2.0 notice:
+
+  Porting/rt-thread/common/cy_network_buffer.c
+      Derived from whd-bsp-integration cy_network_buffer_lwip.c.
+
+The BT platform layer files Porting/rt-thread/common/cybt_platform_rtthread.c
+and cybt_platform_rtthread_55x.c were written by Aerolynq for RT-Thread.
+They are Aerolynq's own work and are under LICENSE, not Apache-2.0
+(Section 3.3).
+
+drivers/wifi-host-driver/src/whd_roam.c has an Infineon / Cypress 2024
+header with Apache-2.0. It is not in the WHD 5.3.1 snapshot Aerolynq has, so
+its upstream source and version are not recorded. It implements the roam
+APIs declared in whd_wifi_api.h. It is treated as Apache-2.0 by its header.
+
+drivers/wifi-host-driver/resources/resource_imp/wiced_resource.h comes from
+an earlier WHD release than the WHD 5.3.1 snapshot (header dated 2024).
+Files in Porting/rt-thread/include/hal/ come from Cypress HAL releases that
+were not recorded.
+
+3. Aerolynq files
+-----------------
+3.1 Aerolynq Software License (LICENSE, SPDX: LicenseRef-Aerolynq-Proprietary)
+
+  Porting/abstraction-rtos/include/COMPONENT_RTTHREAD/
+  Porting/abstraction-rtos/source/COMPONENT_RTTHREAD/*.c
+  Porting/rt-thread/common/combined_download.c, cybt_platform_rtthread.c,
+      cybt_platform_rtthread_55x.c, cyhal_rtthread.c, cyhal_uart.c,
+      whd_low_power.c
+  Porting/rt-thread/include/cyhal_uart.h, whd_wlan_low_power.h
+  Porting/rt-thread/src/aerolynq_bt_wlan.c
+  SConscript, Kconfig, package.json, README.md, docs/
+  External/README.md
+
+These are Aerolynq's own work and are not copied from Infineon files. Where a
+file header names a different license, the header applies.
+
+3.2 Aerolynq files whose header says Apache-2.0
+
+  drivers/wifi-host-driver/resources/resource_imp/whd_resources_combined.c,
+      whd_resources_combined.h, whd_resources_combined_external.c
+  Porting/rt-thread/bt_application/ (ble_app*, ble_coc*, ble_msh_cmd.c)
+  Porting/rt-thread/include/cy_wcm.h, cycfg_system.h
+  Porting/rt-thread/include/bignum.h, ctr_drbg.h, ecdh.h, entropy.h, hkdf.h,
+      hmac_drbg.h (one-line forwarding headers for mbedTLS)
+
+You may use these files under Apache-2.0, as their headers state. They may
+also be used under LICENSE. Whichever you choose, keep the header.
+
+3.3 Aerolynq files that were written from scratch for RT-Thread
+
+  Porting/rt-thread/common/cybt_platform_rtthread.c
+  Porting/rt-thread/common/cybt_platform_rtthread_55x.c
+
+These two files were implemented by Aerolynq for RT-Thread. Their headers
+carry SPDX-License-Identifier: LicenseRef-Aerolynq-Proprietary and no
+Apache-2.0 notice. They are Aerolynq's own work and are under LICENSE
+(Section 3.1) only.
+
+
+4. Infineon firmware and binary data
+------------------------------------
+4.1 Permissive Binary License 1.0 (PBL)
+
+  drivers/wifi-host-driver/resources/firmware/COMPONENT_CYWL*/*.bin
+      WiFi firmware and CLM blobs (the combined images).
+  drivers/wifi-host-driver/resources/nvram/COMPONENT_CYWL{6208,6209,6302,6305,6612}/
+        wifi_nvram_image.h   (SPDX: LicenseRef-PBL)
+
+Infineon's copyright notice and the PBL disclaimer are in the PBL text file
+listed in Section 1 and in the nvram headers. The PBL allows redistribution in
+binary form without modification, requires that the copyright notice and
+disclaimer are reproduced in the documentation that comes with a
+distribution, forbids reverse engineering, and requires the DEPENDENCIES file
+to go with the binaries. If you ship a product, reproduce them in its
+documentation.
+
+4.2 Firmware wrapper files
+
+  drivers/wifi-host-driver/resources/firmware/COMPONENT_CYWL*/wifi_cywl*_firmware.c
+  drivers/wifi-host-driver/resources/firmware/COMPONENT_CYWL*/wifi_cywl*_mfg_firmware.c
+
+These .c files are generated. They contain the Infineon WiFi firmware and CLM
+blob as a C array. Each file begins with a short Aerolynq header; the header
+and the C array form are Aerolynq's, and the payload is unaltered Infineon
+binary data under the PBL (Section 4.1) and has not been changed. Every file
+in this group carries SPDX-License-Identifier: LicenseRef-PBL and states that
+it is not Apache-2.0; treat it under the PBL only. Where the wrapper's
+Aerolynq-owned parts need a license, LICENSE applies. The unmodified Infineon
+firmware and CLM images from which these files were generated are retained by
+Aerolynq.
+
+4.3 Bluetooth controller firmware patch data
+
+  drivers/btstack-integration/bt-fw/
+      LICENSE.txt   (Infineon End User License Agreement)
+  drivers/btstack-integration/bt-fw/bt-fw-cywl-6208/
+      btfw.hcd        Bluetooth controller patch data, HCD format
+      fw_version.txt  patch version string the stack compares against
+  drivers/btstack-integration/bt-fw/tools/hcd2c.py
+      Aerolynq's generator: .hcd -> btfw.c at build time
+
+      The patch data is the Infineon CYW43438 Bluetooth firmware for the
+      CYWL6208 module, Generic UART 26 MHz configuration
+      (wlbga_eLG_lite_AnyCloud). The embedded descriptor in the .hcd reads
+      "BCM4343A1 UART 26 MHz wlbga_eLG_lite_AnyCloud" (the chip's internal
+      designation; the solution is Infineon's); fw_version.txt holds
+      the full version string
+      "BCM4343A1_001.002.009.0153.0000_Generic_UART_26MHz_wlbga_eLG_lite_AnyCloud".
+      Source: https://github.com/Infineon/bt-fw-azw-cyw43438
+      (bt-fw-azw-cyw43438, version 1.0.0.2595). The .hcd is shipped complete
+      and unmodified.
+
+      This data belongs to Infineon Technologies AG (formerly Cypress
+      Semiconductor Corporation, which was acquired by Infineon in 2019) and
+      its suppliers, and is governed by the Infineon End User License
+      Agreement reproduced as LICENSE.txt in this directory.
+      That agreement permits compiling the Firmware Source Code to create
+      Firmware for an Infineon hardware product, and distributing Firmware
+      in binary form only, when installed on a device that includes the
+      Infineon hardware product. Keep the Source Code confidential, keep the
+      copyright notices, and distribute under your standard end user license
+      agreement with the liability and reverse-engineering terms the EULA
+      requires. Source-code redistribution beyond what the EULA allows is
+      not permitted.
+
+      The C file the stack links against (btfw.c, holding
+      brcm_patch_version, brcm_patchram_format, brcm_patchram_buf and
+      brcm_patch_ram_length) is NOT part of the distributed Package. It is
+      generated locally at build time by tools/hcd2c.py when Bluetooth is
+      enabled, from the .hcd shipped above: selecting Bluetooth in the
+      configuration is enough, no extra tool or switch is needed. The
+      generated file is excluded from version control and from releases
+      (see .gitignore in this directory). The generator's output was
+      checked byte-for-byte against Infineon's reference btfw.c: identical
+      patch bytes.
+
+  drivers/btstack-integration/bt-fw/bt-fw-cywl-6209/
+  drivers/btstack-integration/bt-fw/bt-fw-cywl-6302/
+  drivers/btstack-integration/bt-fw/bt-fw-cywl-6305/
+  drivers/btstack-integration/bt-fw/bt-fw-cywl-6612/
+      These directories are empty in this release. They hold the place for
+      the patch data of the other supported Bluetooth chips: the .hcd patch
+      file, its fw_version.txt, one set per chip. For each chip, obtain the
+      matching Infineon bt-firmware package, check its license before
+      distributing it, and place the .hcd set here together with the
+      Infineon EULA text that covers it. The matching btfw.c is then
+      generated automatically at build time.
+
+      Building Bluetooth support also requires the Infineon BTStack protocol
+      stack, which is not part of this Package (see Section 6).
+
+5. Other third-party files
+--------------------------
+    Porting/rt-thread/include/bsp/cybsp.h
+      STMicroelectronics copyright header (CubeMX-generated). Terms: the
+      LICENSE file of the STM32 software component, or AS-IS if none comes
+      with it, as the file states. This file is board-specific and is not
+      part of Aerolynq's work.
+    docs/ and any generated Doxygen HTML
+      May include third-party scripts (for example jQuery) under their own
+      licenses.
+
+
+6. Components NOT included in this package
+------------------------------------------
+The contents of the directory External/ are not part of the distribution.
+Only External/README.md is delivered with this Package; it lists what has to
+be obtained, from whom, and under which license. Download the components
+yourself from their owner and accept their license:
+
+    External/btstack/                  Infineon BTStack library and headers
+                                       https://github.com/Infineon/btstack
+    External/wpa3-external-supplicant/ RT-Thread port of the Infineon WPA3
+                                       external supplicant;
+                                       obtain it from Aerolynq
+                                       (xlx@xlxwlan.com)
+    External/wifi-mfg-test/            RT-Thread port of the Infineon WLAN
+                                       manufacturing / RF test tooling;
+                                       obtain it from Aerolynq
+                                       (xlx@xlxwlan.com)
+
+The BTStack library is under the Infineon End User License Agreement (issued
+originally by Cypress Semiconductor, now an Infineon company; see the header
+of each file). The WPA3 external supplicant is under the Apache License,
+Version 2.0. The manufacturing / RF test tooling is derived from the Infineon
+component and is therefore under the same Infineon End User License Agreement.
+
+The WPA3 external supplicant and the manufacturing / RF test tooling are not
+distributed here in their upstream form, because the upstream Infineon builds
+are not usable with this driver - Aerolynq provides RT-Thread ports of them
+instead. Obtain both from Aerolynq (xlx@xlxwlan.com).
+
+Aerolynq grants no license to any of them. Check their terms before you
+build a product, especially for redistribution and commercial use.
+
+
+7. Trademarks
+-------------
+"Aerolynq" and the Aerolynq logo are trademarks of Xinlian Xinwei
+(Hangzhou) Technology Co., Ltd. Infineon, Cypress, AIROC, CYW, WICED,
+STM32, RT-Thread, Arm, Bluetooth and other names are trademarks of their
+respective owners and are used only to identify compatibility.

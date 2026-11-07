@@ -1,0 +1,7 @@
+# Generated at build time from the .hcd patch data by tools/hcd2c.py.
+# These files are not part of the distributed Package: the Bluetooth
+# controller patch data is shipped as binary .hcd only, and the C file is
+# produced locally during the build.  Keep them out of releases.
+bt-fw-cywl-*/btfw.c
+tools/__pycache__/
+tools/*.pyc

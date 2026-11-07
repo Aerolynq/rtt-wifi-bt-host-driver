@@ -1,0 +1,517 @@
+Aerolynq WiFi/Bluetooth Host Driver Software License
+Hardware-Restricted, Source-Available License, Version 1.0
+
+Copyright (c) 2024-2026 Xinlian Xinwei (Hangzhou) Technology Co., Ltd.
+(新联鑫威（杭州）科技有限公司, "Aerolynq"). All rights reserved.
+Website: https://www.aerolynq.com    Contact: xlx@xlxwlan.com
+
+This License is provided in English and Chinese. The English text is the
+governing text. The Chinese text (中文版) follows it and is a reference
+translation (see Section 14).
+
+
+SCOPE
+
+This License applies to the software package "wifi-bt-host-driver" (the
+"Package") as a whole: the WiFi and Bluetooth host driver, the RT-Thread
+porting layer, and all related source code, headers, data and
+documentation distributed with it (together, the "Software").
+
+The Package is a Derivative Work and compilation that combines Aerolynq's
+own work with third-party components. Aerolynq licenses the Package as a
+whole under this License, as Section 4 of the Apache License, Version 2.0
+permits for Derivative Works as a whole.
+
+Third-Party Components keep their own licenses (Section 7), which are
+summarized in the NOTICE file. This License does not remove any right you
+have under those licenses.
+
+By using, copying, modifying or distributing the Software you accept this
+License. If you do not accept it, do not use the Software.
+
+
+1. DEFINITIONS
+
+"Aerolynq Module" means a WiFi/Bluetooth combo module designed, branded and
+sold by Aerolynq that is based on Infineon (including former Cypress) WiFi
+and Bluetooth chips, including the CYWL6208, CYWL6209, CYWL6302, CYWL6305 and
+CYWL6612, and any later module that Aerolynq identifies as supported.
+
+"Authorized Module" means a genuine Aerolynq Module that was obtained from
+Aerolynq or from a distributor authorized by Aerolynq.
+
+"Product" means a hardware product or system that contains an Authorized
+Module and runs the Software, or a binary build of it.
+
+"Commercial Use" means any use of the Software, or of a Product containing
+it, in connection with a sale, lease, license or other supply for
+consideration, or in mass production, or otherwise for the business
+purposes of an organization. Evaluation, development, prototyping,
+teaching, academic research and personal non-commercial projects are not
+Commercial Use.
+
+"Commercial Authorization" means a written authorization from Aerolynq for
+Commercial Use, as described in Section 3.
+
+"Derivative Work" means any modification of, addition to, or work based on
+the Software, including a port to other hardware or another operating
+system.
+
+"Third-Party Component" means any file or binary in or used with the
+Package that is not owned by Aerolynq, as described in Section 7.
+
+2. FREE LICENSE (NON-COMMERCIAL USE)
+
+Subject to this License, Aerolynq grants you a worldwide, royalty-free,
+non-exclusive, non-transferable, non-sublicensable license to use, copy
+and modify the Software, and to compile and link it into your own
+firmware, for Non-Commercial purposes, and only for use with Authorized
+Modules.
+
+"Non-Commercial" means evaluation, development, prototyping, teaching,
+academic research, and personal projects that are not Commercial Use.
+
+
+3. COMMERCIAL USE REQUIRES AUTHORIZATION
+
+3.1 You may not make Commercial Use of the Software unless you hold a
+Commercial Authorization from Aerolynq.
+
+3.2 A Commercial Authorization must be in writing and must be signed by,
+or issued in the name of, Aerolynq. It may be limited to a product, a
+customer, a quantity, a term or a territory, and Aerolynq may charge a fee
+for it. Aerolynq may refuse to grant it.
+
+3.3 To request a Commercial Authorization, contact xlx@xlxwlan.com. OEM
+and ODM arrangements are also handled through this contact.
+
+3.4 A Commercial Authorization covers only the Software and only use with
+Authorized Modules. It does not license any Third-Party Component.
+
+
+4. RESTRICTIONS
+
+You may not, and may not allow anyone else to:
+
+(a) use, run, port or adapt the Software for, or on, any WiFi or
+    Bluetooth device other than an Authorized Module, or modify the
+    Software so that it supports such a device;
+
+(b) remove or change any copyright, license, trademark or attribution
+    notice in the Software, or the identifiers in the file headers;
+
+(c) sell, rent, lease, sublicense or otherwise transfer the Software or
+    any Derivative Work, except as Section 5 allows;
+
+(d) use the Software, or any part of it, as the basis for a driver,
+    library or product that supports modules or chips other than
+    Aerolynq Modules;
+
+(e) use the names, logos or trademarks of Aerolynq to endorse or promote
+    a Product without written permission, beyond fair statements of
+    compatibility with Aerolynq Modules;
+
+(f) reverse engineer, decompile or disassemble any binary part of the
+    Software, except to the extent applicable law allows despite this
+    limit.
+
+5. DISTRIBUTION
+
+5.1 Source code. You may redistribute the Software, unmodified or as a
+Derivative Work, in source form only (a) as part of the complete Package
+or an unaltered copy of it, and (b) together with this License, the
+NOTICE file and the third-party license texts and files delivered with the
+Package (for example the LICENSE-Apache-2.0.txt files in the upstream
+component directories, the Permissive Binary License
+text and the DEPENDENCIES file), and (c) free of charge. Each recipient
+receives the Software under this License directly from Aerolynq, and your
+redistribution does not grant the recipient any Commercial Authorization.
+If you modify a file that carries a third-party notice, you must mark the
+change in that file as that file's license requires (for Apache-2.0 files,
+a prominent notice that you changed the file).
+
+5.2 Binary form in a Product. If you hold a Commercial Authorization, or
+if the Product is Non-Commercial, you may distribute the Software in
+binary (object code) form only, as part of a Product that contains an
+Authorized Module. You need not provide source code to the purchasers of
+the Product. Your end-user terms for the Product must prohibit reverse
+engineering of the Software and must disclaim Aerolynq's liability to the
+same extent as Sections 10 and 11. You must also meet the conditions of
+the Third-Party Component licenses for binary distribution, for example by
+reproducing, in the documentation of the Product, the copyright notices
+and disclaimers listed in the NOTICE file (including those of the
+Permissive Binary License).
+
+5.3 Mirrors. Public hosting of the Package (for example in a package
+index, a software repository or a vendor SDK) is allowed under 5.1 if the
+Package is distributed complete, with this License and NOTICE unchanged.
+
+
+6. DERIVATIVE WORKS AND CONTRIBUTIONS
+
+6.1 You own your own Derivative Works, but only the parts that you
+create. Aerolynq keeps all rights in the Software it owns. Your
+Derivative Work remains subject to this License, including Sections 3
+and 4.
+
+6.2 If you send a contribution (a patch, a fix or a suggestion) to
+Aerolynq, you grant Aerolynq a perpetual, worldwide, royalty-free,
+irrevocable, non-exclusive, sublicensable license to use, modify and
+distribute it as part of the Software and its derivatives, under any
+license terms. You confirm that you have the right to do so.
+
+
+7. THIRD-PARTY COMPONENTS
+
+7.1 The Package includes components that belong to third parties, mainly
+code, firmware and data from Infineon / Cypress. They remain under their
+own licenses, which are summarized in the NOTICE file. This License does
+not change those licenses, and for those components the third-party
+license prevails over this License for the rights it grants. Where a
+third-party component is licensed under Apache-2.0, you keep your
+Apache-2.0 rights in its unmodified upstream code, whether you obtain it
+from this Package or directly from its upstream project; the restrictions
+in Sections 2 to 5 do not apply to those rights. Your use of Aerolynq's
+modifications, porting layer, firmware wrappers and data, and of the
+Package as a whole, remains subject to this License.
+
+7.2 Components that are not delivered with the Package, such as the
+Infineon BTStack library and other items placed under External/, are not
+licensed to you by Aerolynq. You must obtain them from their owner, accept
+their license terms and comply with them.
+
+7.3 Firmware, CLM and NVRAM data from Infineon are provided under the
+license stated with the data (for the WiFi firmware, CLM blobs and most
+NVRAM files, the Permissive Binary License 1.0; see the NOTICE file). They
+are built for Aerolynq Modules and are intended to be used only on them.
+That is a statement of intended use, not a restriction that this License
+adds to the Permissive Binary License.
+
+7.4 Files that carry their own license notice (an SPDX-License-Identifier
+tag or a license text in the file header) are licensed as that notice
+states. Where an Aerolynq-owned file carries an Apache-2.0 notice, you may
+use that file under Apache-2.0. The exception is the firmware wrapper files
+that NOTICE lists in its Section 4: they embed Infineon binary data, and
+for them NOTICE governs, whatever the header says. The NOTICE file lists
+every file group and its license.
+
+7.5 Certain components in the Package are licensed by Infineon Technologies AG
+under the Infineon End User License Agreement, which was originally issued by
+Cypress Semiconductor Corporation (now an Infineon company) and whose text is
+reproduced as LICENSE.txt in the directory that holds those components. This
+applies in particular to the Bluetooth controller firmware patch data (btfw.hcd)
+in drivers/btstack-integration/bt-fw/. Those components are not licensed by
+Aerolynq and are not covered by this License: they are governed by that
+agreement alone, and that agreement's terms prevail over this License for
+them. Downloading, copying or using such a component means you accept the
+Infineon End User License Agreement and agree to be bound by it, as that
+agreement provides. Aerolynq does not modify those components and does not
+grant any rights in them beyond the rights that agreement gives you.
+
+
+8. NO TRADEMARK, NO IMPLIED LICENSE
+
+"Aerolynq" and the Aerolynq logo are trademarks of Aerolynq. No trademark
+license is granted. No patent license is granted, except as an
+unavoidable part of the copyright license in Section 2. All rights not
+expressly granted are reserved.
+
+
+9. TERMINATION
+
+9.1 This License ends automatically if you breach it. Aerolynq may also
+end it by written notice if you make Commercial Use without a Commercial
+Authorization and do not stop within 30 days of notice.
+
+9.2 On termination you must stop using the Software and delete all
+copies in your possession, except that purchasers who lawfully received a
+Product before termination may keep using that copy of the Product.
+
+9.3 Sections 4, 6, 7, 8, 10, 11, 12 and 13 survive termination.
+
+10. DISCLAIMER OF WARRANTY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS
+PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, NON-INFRINGEMENT AND ACCURACY. AEROLYNQ DOES NOT WARRANT THAT
+THE SOFTWARE IS ERROR-FREE, SECURE, OR SUITABLE FOR YOUR PRODUCT, OR THAT
+IT WILL PASS ANY REGULATORY OR RADIO CERTIFICATION. YOU ARE RESPONSIBLE
+FOR TESTING AND CERTIFYING YOUR PRODUCT, INCLUDING RADIO REGULATORY
+COMPLIANCE FOR EACH TARGET COUNTRY. THE SOFTWARE IS NOT DESIGNED FOR USE
+WHERE A FAILURE MAY CAUSE DEATH, PERSONAL INJURY OR SEVERE PROPERTY OR
+ENVIRONMENTAL DAMAGE, AND YOU USE IT IN SUCH APPLICATIONS AT YOUR OWN
+RISK.
+
+
+11. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, AEROLYNQ WILL NOT BE
+LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE
+DAMAGES, OR FOR LOSS OF PROFIT, REVENUE, DATA OR BUSINESS, ARISING OUT OF
+OR RELATED TO THIS LICENSE OR THE SOFTWARE, UNDER ANY THEORY OF
+LIABILITY. AEROLYNQ'S TOTAL LIABILITY IS LIMITED TO THE AMOUNT YOU PAID
+AEROLYNQ FOR THE SOFTWARE UNDER A COMMERCIAL AUTHORIZATION, OR TO RMB 500
+IF YOU PAID NOTHING. NOTHING IN THIS LICENSE EXCLUDES LIABILITY THAT
+CANNOT BE EXCLUDED BY LAW.
+
+
+12. EXPORT AND COMPLIANCE
+
+You must comply with all export control, sanctions and radio regulatory
+laws that apply to your use and distribution of the Software and your
+Products.
+
+
+13. GOVERNING LAW AND DISPUTES
+
+This License is governed by the laws of the People's Republic of China,
+excluding its conflict-of-law rules. The courts at the place of
+Aerolynq's registered office (Hangzhou, Zhejiang) have exclusive
+jurisdiction, except that Aerolynq may seek injunctive relief in any court
+of competent jurisdiction to protect its intellectual property.
+
+
+14. GENERAL
+
+14.1 Language. This License is made in English and Chinese. If the two
+texts differ, the English text governs.
+
+14.2 Entire agreement. This License, together with any Commercial
+Authorization, is the entire agreement between you and Aerolynq about the
+Software. A Commercial Authorization prevails over this License where
+they conflict.
+
+14.3 Severability. If a provision is held unenforceable, the rest of this
+License stays in force, and the provision is applied to the extent the law
+allows.
+
+14.4 No waiver. A failure to enforce a right is not a waiver of it.
+
+14.5 Changes. Aerolynq may publish a new version of this License. A new
+version applies to copies of the Software that Aerolynq releases under
+that version. It does not change the terms of copies you already received.
+
+14.6 Contact. Xinlian Xinwei (Hangzhou) Technology Co., Ltd.
+     Website: https://www.aerolynq.com
+     Email:   xlx@xlxwlan.com
+
+
+==============================================================================
+中文版（参考译文，如与英文版不一致，以英文版为准）
+==============================================================================
+
+Aerolynq WiFi/蓝牙主机驱动软件许可协议
+限定硬件的源码可见许可，第 1.0 版
+
+版权所有 (c) 2024-2026 新联鑫威（杭州）科技有限公司
+（Xinlian Xinwei (Hangzhou) Technology Co., Ltd.，简称"Aerolynq"）。保留所有权利。
+网站：https://www.aerolynq.com    联系邮箱：xlx@xlxwlan.com
+
+
+适用范围
+
+本许可适用于整个软件包 "wifi-bt-host-driver"（"本软件包"）：包括 WiFi 和蓝牙主机驱动、
+RT-Thread 移植层，以及随包分发的全部相关源码、头文件、数据和文档（合称"本软件"）。
+
+本软件包是 Aerolynq 自有成果与第三方组件的衍生作品和汇编。Aerolynq 将本软件包整体
+适用本许可，这是 Apache License 2.0 第 4 条对衍生作品整体所允许的。
+
+第三方组件保留其自身许可（第 7 条），概要见 NOTICE 文件。本许可不取消您依据这些许可
+所享有的任何权利。
+
+您使用、复制、修改或分发本软件，即表示接受本许可。若不接受，请勿使用本软件。
+
+
+1. 定义
+
+"Aerolynq 模组"：由 Aerolynq 设计、冠名并销售的、基于 Infineon（含原 Cypress）
+WiFi 和蓝牙芯片的 WiFi/蓝牙 combo 模组，包括
+CYWL6208、CYWL6209、CYWL6302、CYWL6305、CYWL6612，以及 Aerolynq 今后声明支持的
+其他模组。
+
+"授权模组"：从 Aerolynq 或 Aerolynq 授权的经销商处取得的正品 Aerolynq 模组。
+
+"产品"：包含授权模组并运行本软件的硬件产品或系统，或其二进制构建。
+
+"商业使用"：为销售、出租、许可或其他有偿提供，或为量产，或为组织的经营目的而使用
+本软件或包含本软件的产品。评估、开发、原型验证、教学、学术研究和个人非商业项目
+不属于商业使用。
+
+"商业授权"：Aerolynq 依第 3 条出具的、允许商业使用的书面授权。
+
+"衍生作品"：对本软件的任何修改、增补或基于本软件形成的作品，包括移植到其他硬件
+或其他操作系统。
+
+"第三方组件"：本软件包内或与本软件包配合使用的、不归 Aerolynq 所有的文件或二进制
+（见第 7 条）。
+
+
+2. 免费许可（非商业使用）
+
+在遵守本许可的前提下，Aerolynq 授予您全球范围内的、免许可费的、非独占的、不可转让
+的、不可再许可的权利：为非商业目的使用、复制和修改本软件，并将其编译链接到您自己
+的固件中，且仅限与授权模组配合使用。
+
+"非商业"指评估、开发、原型验证、教学、学术研究，以及不属于商业使用的个人项目。
+
+
+3. 商业使用须经授权
+
+3.1 除非您持有 Aerolynq 的商业授权，否则不得商业使用本软件。
+
+3.2 商业授权必须为书面形式，并由 Aerolynq 签署或以 Aerolynq 名义出具。授权可限定
+产品、客户、数量、期限或地域，Aerolynq 可为此收费，也可拒绝授予。
+
+3.3 申请商业授权请联系 xlx@xlxwlan.com。OEM/ODM 合作也通过该邮箱办理。
+
+3.4 商业授权仅涵盖本软件，且仅限与授权模组配合使用，不授予任何第三方组件的许可。
+
+
+4. 限制
+
+您不得，也不得允许他人：
+
+(a) 在授权模组以外的任何 WiFi 或蓝牙设备上使用、运行、移植或适配本软件，或修改本软件
+    使其支持此类设备；
+
+(b) 删除或更改本软件中的任何版权、许可、商标或署名声明，或文件头中的标识；
+
+(c) 出售、出租、租赁、再许可或以其他方式转让本软件或任何衍生作品，但第 5 条允许的
+    除外；
+
+(d) 以本软件或其任何部分为基础，开发支持 Aerolynq 模组以外的模组或芯片的驱动、库
+    或产品；
+
+(e) 未经书面许可，使用 Aerolynq 的名称、标识或商标为产品背书或宣传，但对与 Aerolynq
+    模组兼容性所作的合理客观陈述除外；
+
+(f) 对本软件的任何二进制部分进行反向工程、反编译或反汇编，但适用法律不允许此限制的
+    情形除外。
+
+5. 分发
+
+5.1 源码。您可以以源码形式再分发本软件（原样或衍生作品），条件是：(a) 作为完整软件包
+或其未经改动的副本的一部分；(b) 同时附带本许可、NOTICE 文件，以及随软件包交付的第三方
+许可文本和文件（例如各上游组件目录下的 LICENSE-Apache-2.0.txt、Permissive Binary License 文本和
+DEPENDENCIES 文件）；(c) 免费。每个接收方直接从 Aerolynq 获得本许可下的权利，您的再
+分发不授予接收方任何商业授权。您修改带有第三方声明的文件时，必须按该文件所适用的许可
+要求标明修改（对 Apache-2.0 文件，须在文件中加入显著的修改声明）。
+
+5.2 产品中的二进制形式。若您持有商业授权，或产品属于非商业用途，您可以仅以二进制
+（目标代码）形式，将本软件作为包含授权模组的产品的一部分进行分发，无需向产品购买
+方提供源码。您为产品制定的最终用户条款，必须禁止对本软件进行反向工程，并在与第 10、
+11 条相同的范围内免除 Aerolynq 的责任。您还必须满足第三方组件许可对二进制分发的条件，
+例如在产品文档中复制 NOTICE 文件所列的版权声明和免责声明（包括 Permissive Binary
+License 的声明）。
+
+5.3 镜像。在软件包索引、软件仓库或厂商 SDK 中公开托管本软件包，只要按 5.1 完整分发，
+且本许可与 NOTICE 保持不变，即属允许。
+
+
+6. 衍生作品与贡献
+
+6.1 您拥有自己创作的衍生作品中由您创作的部分。Aerolynq 保留其拥有的本软件的全部权利。
+您的衍生作品仍受本许可约束，包括第 3、4 条。
+
+6.2 若您向 Aerolynq 提交贡献（补丁、修复或建议），则您授予 Aerolynq 永久的、全球范围
+的、免许可费的、不可撤销的、非独占的、可再许可的权利，以任何许可条款将其作为本软件
+及其衍生版本的一部分使用、修改和分发。您保证您有权这样做。
+
+
+7. 第三方组件
+
+7.1 本软件包包含属于第三方的组件，主要是来自 Infineon / Cypress 的代码、固件和数据。
+它们仍适用各自的许可，概要见 NOTICE 文件。本许可不改变这些许可，对这些组件，第三方
+许可在其所授予的权利范围内优先于本许可。第三方组件采用 Apache-2.0 许可的，您对其未经
+修改的上游代码仍保有 Apache-2.0 权利，无论是从本软件包还是直接从上游项目获取；本许可
+第 2 至 5 条的限制不适用于这些权利。您对 Aerolynq 的修改、移植层、固件封装和数据，以及
+对本软件包整体的使用，仍受本许可约束。
+
+7.2 不随本软件包交付的组件，例如 Infineon BTStack 库及放在 External/ 下的其他内容，
+不由 Aerolynq 向您授权。您必须自行从其权利人处获取，接受其许可条款并遵守这些条款。
+
+7.3 来自 Infineon 的固件、CLM 和 NVRAM 数据，按随数据所附的许可提供（WiFi 固件、CLM
+blob 和大部分 NVRAM 文件适用 Permissive Binary License 1.0，见 NOTICE 文件）。它们是为
+Aerolynq 模组构建的，预期仅用于这些模组。这是对预期用途的说明，不是本许可在 Permissive
+Binary License 之外增加的限制。
+
+7.4 文件头中带有自身许可声明（SPDX-License-Identifier 标签或许可文本）的文件，按该声明
+授权。Aerolynq 自有文件带有 Apache-2.0 声明的，您可以按 Apache-2.0 使用该文件。例外是
+NOTICE 第 4 节所列的固件封装文件：它们内嵌 Infineon 的二进制数据，无论文件头如何标注，
+均以 NOTICE 为准。NOTICE 文件列出了每一组文件及其许可。
+
+7.5 本软件包中的某些组件由 Infineon Technologies AG 依据英飞凌最终用户许可协议授权，该
+协议最初由 Cypress Semiconductor Corporation（现为英飞凌旗下公司）发布，其全文以
+LICENSE.txt 的形式置于存放这些组件的目录中，其中特别是
+drivers/btstack-integration/bt-fw/ 下的蓝牙控制器固件补丁数据（btfw.hcd）。这些组件
+不由 Aerolynq 授权，也不受本许可约束：它们仅由该协议管辖，就这些组件而言，该协议的
+条款优先于本许可。下载、复制或使用此类组件，即表示您接受英飞凌最终用户许可协议并受
+其约束，正如该协议所规定。Aerolynq 不修改这些组件，也不授予超出该协议所给范围之外的
+任何权利。
+
+
+8. 无商标许可，无默示许可
+
+"Aerolynq" 及其标识是 Aerolynq 的商标，本许可不授予任何商标权利。除作为第 2 条
+版权许可不可避免的一部分外，不授予任何专利许可。未明确授予的权利均予保留。
+
+
+9. 终止
+
+9.1 您违反本许可时，本许可自动终止。若您未取得商业授权而商业使用，且在收到通知后 30 日
+内未停止，Aerolynq 也可书面通知终止。
+
+9.2 终止后，您必须停止使用并删除您持有的全部副本；但在终止前合法取得产品的购买方可
+继续使用该产品中的该副本。
+
+9.3 第 4、6、7、8、10、11、12、13 条在终止后继续有效。
+
+
+10. 免责声明
+
+在适用法律允许的最大范围内，本软件按"现状"提供，不附带任何明示或默示担保，包括对适销性、
+特定用途适用性、不侵权和准确性的担保。Aerolynq 不保证本软件无错误、安全、适用于您的
+产品，或能通过任何监管或无线电认证。您应负责测试并认证您的产品，包括各目标国家的
+无线电监管合规。本软件并非为故障可能导致死亡、人身伤害或严重财产或环境损害的场景而
+设计，您在此类场景使用本软件须自担风险。
+
+
+11. 责任限制
+
+在适用法律允许的最大范围内，Aerolynq 不对因本许可或本软件引起或与之相关的任何间接、
+附带、特殊、后果性或惩罚性损害，或利润、收入、数据或业务损失承担责任，无论基于何种
+责任理论。Aerolynq 的全部责任以您依商业授权已向 Aerolynq 就本软件支付的金额为限；
+若您未支付任何费用，则以人民币 500 元为限。本许可不排除依法不能排除的责任。
+
+
+12. 出口与合规
+
+您必须遵守适用于您使用和分发本软件及产品的出口管制、制裁和无线电监管法律。
+
+
+13. 适用法律与争议解决
+
+本许可适用中华人民共和国法律，不适用其冲突法规则。Aerolynq 住所地（浙江省杭州市）
+的法院享有专属管辖权；但为保护其知识产权，Aerolynq 可向任何有管辖权的法院申请禁令
+救济。
+
+
+14. 其他
+
+14.1 语言。本许可以英文和中文制作。两种文本不一致时，以英文版为准。
+
+14.2 完整协议。本许可连同任何商业授权，构成您与 Aerolynq 就本软件达成的完整协议。
+商业授权与本许可冲突时，以商业授权为准。
+
+14.3 可分割性。若某条款被认定不可执行，其余条款继续有效，该条款在法律允许的范围内
+适用。
+
+14.4 不弃权。未行使权利不构成对该权利的放弃。
+
+14.5 变更。Aerolynq 可发布本许可的新版本。新版本适用于 Aerolynq 以该版本发布的本软件
+副本，不改变您已获得的副本的条款。
+
+14.6 联系方式。新联鑫威（杭州）科技有限公司
+     网站：https://www.aerolynq.com
+     邮箱：xlx@xlxwlan.com

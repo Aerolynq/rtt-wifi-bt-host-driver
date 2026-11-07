@@ -1,5 +1,8 @@
 # WiFi-BT Host Driver for RT-Thread
 
+WiFi 4/5/6 and Bluetooth host driver for RT-Thread, built on Infineon's WHDand BTStack, for Aerolynq CYWL series combo modules over SDIO + HCI UART.
+**License**: Proprietary (Aerolynq, hardware-restricted) + Apache-2.0 (upstream components).
+
 面向 RT-Thread 的 Aerolynq® **CYWL 系列 WiFi + 蓝牙 combo 模组**驱动软件包：
 
 - **WiFi**：基于 Infineon WHD，通过 SDIO 接入，注册为 RT-Thread WLAN 设备，
@@ -277,7 +280,7 @@ msh> whd_combined_download my_part     # 指定分区名
 
 ### HCI UART（蓝牙）
 
-蓝牙串口与 MCU 串口需要**交叉连接**（模组 TX → MCU RX，模组 RX → MCU TX）。
+蓝牙串口与 MCU 串口需要**交叉连接**（模组 TX → MCU RX，模组 RX → MCU TX 模组 cts → MCU rts  模组 Rts → MCU cts）。
 
 | 信号                       | 说明                                       |
 | -------------------------- | ------------------------------------------ |
