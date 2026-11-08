@@ -12,6 +12,8 @@ WiFi 4/5/6 and Bluetooth host driver for RT-Thread, built on Infineon's WHDand B
 **License**: Proprietary（Aerolynq® 专有，仅限配合 Aerolynq® 模组使用）+ Apache-2.0（上游组件）。
 完整条款及逐文件权利归属见 [`LICENSE`](LICENSE) / [`NOTICE`](NOTICE)。
 
+> English version: [`README_EN.md`](README_EN.md)
+
 ---
 
 ## 1. 简介

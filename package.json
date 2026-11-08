@@ -1,8 +1,9 @@
 {
-    "name": "wifi-bt-host-driver",
+    "name": "rtt-wifi-bt-host-driver",
     "description": "WiFi/Bluetooth Host Driver for Aerolynq CYWL modules on RT-Thread (Proprietary License, Hardware-Restricted)",
     "description_zh": "新联鑫威 CYWL 系列 WiFi/蓝牙驱动（RT-Thread 移植）- 专有许可，仅限 Aerolynq 模组使用",
     "keywords": [
+        "rt-thread",
         "wifi",
         "bluetooth",
         "ble",
@@ -29,25 +30,22 @@
     },
     "license": "non-commercial use",
     "license_file": "LICENSE",
-    "repository": "https://github.com/Aerolynq/wifi-bt-host-driver.git",
+    "repository": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver.git",
     "homepage": "https://www.aerolynq.com",
-    "doc_url": "https://github.com/Aerolynq/wifi-bt-host-driver/blob/main/README.md",
+    "doc_url": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver/blob/main/README.md",
     "site": [
         {
             "version": "v1.0.0",
-            "URL": "https://github.com/Aerolynq/wifi-bt-host-driver/archive/refs/tags/v1.0.0.zip",
-            "filename": "wifi-bt-host-driver-1.0.0.zip",
+            "URL": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver/archive/refs/tags/v1.0.0.zip",
+            "filename": "rtt-wifi-bt-host-driver-1.0.0.zip",
             "VER_SHA": "v1.0.0"
         },
         {
             "version": "latest",
-            "URL": "https://github.com/Aerolynq/wifi-bt-host-driver.git",
+            "URL": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver.git",
             "filename": "Null",
             "VER_SHA": "main"
         }
     ],
-    "readme": {
-        "zh": "README.md",
-        "en": "README.md"
-    }
+    "readme": "WiFi and Bluetooth host driver for RT-Thread, for Aerolynq CYWL series combo modules over SDIO + HCI UART."
 }

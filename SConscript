@@ -549,7 +549,7 @@ if GetDepend(['WHD_USING_BTSTACK']) and _btstack_available:
                 target_group = None
                 for grp in groups.findall('Group'):
                     gn = grp.find('GroupName')
-                    if gn is not None and gn.text and 'wifi-bt-host-driver' in gn.text:
+                    if gn is not None and gn.text and 'rtt-wifi-bt-host-driver' in gn.text:
                         target_group = grp
                         break
 
@@ -601,6 +601,6 @@ if GetDepend(['WHD_USING_BTSTACK']) and _btstack_available:
     else:
         print('Warning: BTStack library not found at: ' + lib_full_path)
 
-group = DefineGroup('wifi-bt-host-driver', src, depend = ['PKG_USING_WIFI_BT_HOST_DRIVER'], CPPPATH = path, CPPDEFINES = CPPDEFINES, LOCAL_CFLAGS = LOCAL_CFLAGS, LIBS = LIBS, LIBPATH = LIBPATH)
+group = DefineGroup('rtt-wifi-bt-host-driver', src, depend = ['PKG_USING_WIFI_BT_HOST_DRIVER'], CPPPATH = path, CPPDEFINES = CPPDEFINES, LOCAL_CFLAGS = LOCAL_CFLAGS, LIBS = LIBS, LIBPATH = LIBPATH)
 
 Return('group')

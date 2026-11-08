@@ -7,7 +7,7 @@
 # See LICENSE and NOTICE files for details.
 
 menuconfig PKG_USING_WIFI_BT_HOST_DRIVER
-    bool "Using WiFi-BT-Host-Driver (Aerolynq CYWL modules)"
+    bool "RTT-WiFi-BT-Host-Driver"
     select RT_USING_WIFI
     select RT_USING_SAL
     select RT_USING_SDIO
@@ -25,13 +25,13 @@ menuconfig PKG_USING_WIFI_BT_HOST_DRIVER
 
         config PKG_WIFI_BT_HOST_DRIVER_PATH
             string
-            default "/packages/iot/WiFi/wifi-bt-host-driver"
+            default "/packages/iot/WiFi/rtt-wifi-bt-host-driver"
 
         choice
             prompt "version"
             default PKG_USING_WIFI_BT_HOST_DRIVER_LATEST_VERSION
             help
-                Select the WiFi-BT-Host-Driver version
+                Select the RTT-WiFi-BT-Host-Driver version
 
             config PKG_USING_WIFI_BT_HOST_DRIVER_LATEST_VERSION
                 bool "latest"
