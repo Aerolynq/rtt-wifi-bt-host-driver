@@ -21,7 +21,7 @@
         "sdio",
         "wlan"
     ],
-    "category": "iot/WiFi",
+    "category": "iot",
     "enable": "PKG_USING_WIFI_BT_HOST_DRIVER",
     "author": {
         "name": "Xinlian Xinwei (Hangzhou) Technology Co., Ltd.",
